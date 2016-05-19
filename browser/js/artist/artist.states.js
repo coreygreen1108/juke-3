@@ -1,4 +1,6 @@
-juke.config(function($stateProvider){
+juke.config(function($stateProvider, $urlRouterProvider){
+	$urlRouterProvider.when('/artists/:id', '/artists/:id/albums');
+	
 	$stateProvider.state('allArtists', {
 		url: '/artists',
 		templateUrl: 'allArtists.html',
@@ -20,6 +22,7 @@ juke.config(function($stateProvider){
 		},
 		controller: 'ArtistCtrl'
 	})
+	
 
 	$stateProvider.state('anArtist.albums', {
 		url: '/albums',
